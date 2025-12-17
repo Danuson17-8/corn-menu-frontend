@@ -54,17 +54,24 @@ npm run dev
 # Preview
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](public/images/screenshots/home.png)
 
 ### Menu Page
-![Menu1 Page](screenshots/menu1.png) ![Menu2 Page](screenshots/menu2.png)
+<p align="center">
+  <img src="public/images/screenshots/menu1.png" width="45%" />
+  <img src="public/images/screenshots/menu2.png" width="45%" />
+</p>
 
 ### Contact
-![Contact Page](screenshots/contact.png)
+<p align="center">
+  <img src="public/images/screenshots/contact.png" height="600" />
+</p>
 
 ### Login / Register
-![Login](screenshots/login.png) ![Register](screenshots/register.png)
-
+<p align="center">
+  <img src="public/images/screenshots/login.png" height="400" />
+  <img src="public/images/screenshots/register.png" height="400" />
+</p>
 
 # License
 
