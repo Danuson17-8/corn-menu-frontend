@@ -1,0 +1,39 @@
+import PromotionCategoryCard from "@/components/custom/card/promotion/promotion-category-card"
+import PromotionCarousel from "@/components/custom/carousel/promotion-carousel"
+import InternalErrorScreen from "@/components/custom/screen/internal-error"
+import { LoadingScreen } from "@/components/custom/screen/loading-screen"
+import type { Promotion } from "@/interface/promotion"
+import { requestAPI } from "@/lib/api"
+import { useQuery } from "@tanstack/react-query"
+
+export const Route = createFileRoute({
+  component: RouteComponent,
+})
+
+function RouteComponent() {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["promoton"],
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: true,
+    queryFn: () =>
+      requestAPI<Promotion[]>({
+        method: "GET",
+        url: `/promotion`,
+        throwHTTPError: true,
+      })
+  })
+
+  if (error) return <InternalErrorScreen error={error}/>
+  if (isLoading || !data?.data) return <LoadingScreen open={true}/>
+
+  return <div className="relative bg-gray-950 min-h-screen select-none overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center blur-sm"
+        style={{ backgroundImage: "url('/images/bg/bg-corn2.jpg')" }}
+      />
+      <PromotionCategoryCard className="absolute"/>
+      <div className="absolute left-1/2 -translate-x-1/2 top-35">
+          <PromotionCarousel items={data.data} />
+      </div>
+  </div>
+}
