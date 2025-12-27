@@ -15,10 +15,16 @@ export default function MenuCarousel({ items }: { items: CornMenu[] }) {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap())
     })
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 4000)
+
+    return () => clearInterval(interval)
   }, [api])
 
   return (
-    <div className="mx-auto">
+    <div className="mx-15">
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items?.map((item, index) => (

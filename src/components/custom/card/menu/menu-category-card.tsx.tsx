@@ -24,15 +24,15 @@ export default function MenuCategoryCard () {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
                     >
-                    <div className="flex justify-between gap-50 lg:gap-130">
-                        <ScrollScale className="text-5xl lg:text-[100px]">                       
+                    <div className="flex justify-between gap-13 lg:gap-130 ml-7 md:ml-0">
+                        <ScrollScale className="text-5xl lg:text-[100px] mb-50 md:mb-0">                       
                             <span className="text-black">ME</span><span className="text-white">NU</span>
                             <p className="text-[50px]">SHOP</p>
                         </ScrollScale>
-                        <ScrollScale className="text-white text-[100px]">
-                            <p className="text-amber-400 text-[50px] text-end lg:text-start">CORN</p>
+                        <ScrollScale className="text-white text-5xl md:text-[100px] mt-60 md:mt-0">
+                            <p className="text-amber-400 text-[50px]">CORN</p>
                             C<span className="text-black">O</span><span className="text-amber-400">R</span><span className="text-black">N</span>N<span className="text-red-500">!</span>
-                            <div className="w-[370px] overflow-hidden relative bg-gray-900 rounded-b-xl text-gray-400">
+                            <div className="w-45 md:w-[370px] overflow-hidden relative bg-gray-900 rounded-b-xl text-gray-400">
                                 <MarqueeText text="SUPER CORN CORNN! SUPER CORN CORNN! "/>
                             </div>
                         </ScrollScale>

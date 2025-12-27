@@ -37,7 +37,7 @@ const NavLink = ({ to, children, onClick }: NavLinkProps) => (
         to={to}
         onClick={onClick}
         className="
-            px-3 pt-0.5 pb-1 md:rounded-full my-auto text-center font-medium text-sm text-yellow-50 select-none
+            px-3 py-2 md:py-1 md:rounded-full my-auto text-center font-medium text-sm text-yellow-50 select-none
             transition-all duration-500 ease-in-out transform
             hover:text-black hover:bg-primary md:hover:scale-110
             md:data-[active=true]:scale-110 data-[active=true]:text-black data-[active=true]:bg-primary
@@ -56,12 +56,15 @@ export const NavBar = () => {
 
     useEffect(() => {
         const controlNavbar = () => {
-        if (window.scrollY > lastScrollY) {
-            setShow(false);
-        } else {
-            setShow(true);
-        }
-        setLastScrollY(window.scrollY);
+            if (window.scrollY < 10) {
+                setShow(true);
+            } else if (window.scrollY > lastScrollY) {
+                setShow(false);
+                setOpen(false);
+            } else {
+                setShow(true);
+            }
+            setLastScrollY(window.scrollY);
         };
 
         window.addEventListener("scroll", controlNavbar);
@@ -69,8 +72,8 @@ export const NavBar = () => {
     }, [lastScrollY]);
 
     return  <>
-        <div className="h-20 bg-black" />
-        <nav className={`fixed top-0 z-50 w-full bg-black p-5 items-center transition-transform duration-300 ${show ? "translate-y-0" : "-translate-y-full"}`}>
+        <div className="h-10 md:h-15 bg-black" />
+        <nav className={`fixed top-0 z-50 w-full bg-black p-3 items-center transition-transform duration-300 ${show ? "translate-y-0" : "-translate-y-full"}`}>
             <div className="flex items-center justify-between lg:justify-around">
                 <button
                     onClick={() => setOpen(!open)}

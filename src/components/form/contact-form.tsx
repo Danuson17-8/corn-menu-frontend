@@ -5,6 +5,7 @@ import { contactSchema } from "@/schema/contact.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import { SelectCustom } from "../custom/select/select-custom";
 
 export interface ContactFormProps {
     onSuccess: (data: z.infer<typeof contactSchema>) => void;
@@ -35,28 +36,35 @@ export default function ContactForm({
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSuccess)} className="space-y-5">
-                <p>Select a topic:</p>
-                <div className="space-x-5 space-y-5">
-                    {topics.map((t) => (
-                        <Button
-                            key={t}
-                            type="button"
-                            onClick={() => form.setValue("topic", t)}
-                            className="rounded-full bg-white text-black cursor-pointer shadow-xl"
-                        >
-                            {t}
-                        </Button>
-                    ))}
+                <div className="hidden md:block">
+                    <p>Select a topic:</p>
+                    <div className="space-x-5 space-y-5">
+                        {topics.map((t) => (
+                            <Button
+                                key={t}
+                                type="button"
+                                onClick={() => form.setValue("topic", t)}
+                                className="rounded-full bg-white text-black cursor-pointer shadow-xl"
+                            >
+                                {t}
+                            </Button>
+                        ))}
+                    </div>
                 </div>
-                <div className="flex gap-5 mt-10">
+                <div className="flex flex-col md:flex-row gap-5 mt-10">
                     <FormField
                         control={form.control}
                         name="topic"
                         render={({ field }) => (
-                            <FormItem className="w-40">
+                            <FormItem className="w-full md:w-60">
                                 <FormLabel>Topic:</FormLabel>
                                 <FormControl>
-                                    <Input {...field} readOnly />
+                                    <SelectCustom
+                                        label="Select topic"
+                                        items={topics}
+                                        value={field.value}
+                                        onChange={field.onChange}
+                                    />
                                 </FormControl>
                             </FormItem>
                         )}
@@ -94,7 +102,7 @@ export default function ContactForm({
                         </FormItem>
                     )}
                 />
-                <Button type="submit" className="btn-primary rounded-none px-10" onClick={() => console.log(form.getValues())}>
+                <Button type="submit" className="w-full md:w-auto btn-primary rounded-none px-10" onClick={() => console.log(form.getValues())}>
                     GET HELP
                 </Button>
             </form>

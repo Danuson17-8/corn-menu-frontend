@@ -16,8 +16,8 @@ function RouteComponent() {
     >
       <div className="flex justify-center lg:gap-35 sticky top-30">
         <div className="space-y-5">
-          <p className="text-6xl lg:text-7xl">Corn CORNN!</p>
-          <p className="text-5xl lg:text-6xl">Freshly Grilled Corn.<br/> Made to Make<br/> You Smile.</p>
+          <p className="text-5xl lg:text-7xl">Corn CORNN!</p>
+          <p className="text-4xl lg:text-6xl">Freshly Grilled Corn.<br/> Made to Make<br/> You Smile.</p>
           <p className="text-1xl lg:text-2xl">Crafted with Care. Grilled with Passion.</p>
           <Button className="text-black mr-5 cursor-pointer" onClick={() => navigate({to: "/menu"})}>
             Buy Now
