@@ -17,20 +17,17 @@ export const Footer = () => (
             </div>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 p-7 md:px-20 lg:px-60 items-start text-white space-y-5">
-        
             <div className="flex flex-col items-start space-y-3">
                 <div className="flex gap-3">
-                    <img src="images/corn.png" alt="image ICON" className="h-7" />
+                    <img src="favicon.png" alt="image ICON" className="h-7" />
                     <p className="text-2xl font-bold">CORN CORNN</p>
                 </div>
                 <p>Freshly Grilled Corn. Made to Make You Smile.</p>
             </div>
-
             <div className="flex flex-col items-end lg:items-center space-y-3">
                 <p className="text-xl font-bold">Contact</p>
                 <Link to="/contact">Contact us</Link>
             </div>
-
             <div className="col-span-2 lg:col-span-1 flex flex-row lg:flex-col justify-center items-center lg:items-end gap-5">
                 <div className="flex items-center gap-2">
                     <MapPin size={16} />
@@ -41,7 +38,6 @@ export const Footer = () => (
                     <p>012-345-6789</p>
                 </div>
             </div>
-
         </div>
         <div className="text-xs text-center p-5 text-gray-400 bg-gray-950">
           © {new Date().getFullYear()} Corn CORNN!. All rights reserved.

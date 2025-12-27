@@ -84,7 +84,7 @@ export const NavBar = () => {
                         className="mr-10 hover:scale-130 transition-transform duration-300 ease-in-out"
                     >
                         <img
-                            src="/images/corn.png"
+                            src="favicon.png"
                             className="max-h-10"
                             alt="Corn Corn"
                         />
