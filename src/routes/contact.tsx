@@ -34,7 +34,7 @@ function RouteComponent() {
 
   if(isPending) return <LoadingScreen open={true}/>
 
-  return <div className="relative min-h-screen py-10 px-10 md:px-20 lg:px-30">
+  return <div className="relative min-h-screen py-10 px-3 md:px-10 lg:px-30">
     <div
       className="absolute inset-0 bg-cover bg-center z-0"
       style={{ backgroundImage: "url('/images/bg/bg-corn1.jpg')" }}
