@@ -48,7 +48,7 @@ function RouteComponent() {
     </svg>
     <div className="relative flex">
       <ContactCard>
-        <ContactForm onSuccess={mutate} isLoading={isPending}/>
+        <ContactForm onSuccess={mutate}/>
       </ContactCard>
       <div className="bg-white/30 backdrop-blur-md hidden lg:block p-10 rounded-r-2xl shadow-lg space-y-10 text-gray-800">
         <div className="flex gap-3">

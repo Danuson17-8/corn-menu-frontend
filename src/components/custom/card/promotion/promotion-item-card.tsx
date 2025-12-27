@@ -1,4 +1,4 @@
-import { Card, CardDescription, CardFooter, CardTitle } from "@/components/ui/card";
+import { Card, CardFooter, CardTitle } from "@/components/ui/card";
 import type { Promotion } from "@/interface/promotion";
 import CardContent from "@mui/material/CardContent";
 

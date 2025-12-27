@@ -1,14 +1,14 @@
-import * as React from "react"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel"
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import type { Promotion } from "@/interface/promotion"
 import PromotionItemCard from "../card/promotion/promotion-item-card"
+import { useEffect, useState } from "react"
 
 export default function PromotionCarousel({ items }: { items: Promotion[] }) {
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) return
 
     setCount(api.scrollSnapList().length)

@@ -8,7 +8,7 @@ import {
 } from 'react';
 import { requestAPI } from '@/lib/api';
 import { useCaptcha } from './captcha';
-import type { IResetPasswordSendOTP, IResetPasswordVerifyOTP } from '@/interface/auth/reset-password.interface';
+import type { IResetPasswordSendOTP } from '@/interface/auth/reset-password.interface';
 import type { IAccount } from '@/interface/user';
 
 interface IAuth {

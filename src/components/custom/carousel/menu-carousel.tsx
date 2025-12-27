@@ -1,18 +1,15 @@
-import * as React from "react"
 import MenuItemCard from "../card/menu/menu-item-card"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import type { CornMenu } from "@/interface/corn-menu"
 import { Fadeup } from "../framer-motion/fadeup"
+import { useEffect, useState } from "react"
 
 export default function MenuCarousel({ items }: { items: CornMenu[] }) {
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  //const [count, setCount] = React.useState(0)
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) return
-
-    //setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap())
 
     api.on("select", () => {

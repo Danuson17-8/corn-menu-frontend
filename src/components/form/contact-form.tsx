@@ -7,13 +7,11 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 export interface ContactFormProps {
-    isLoading: boolean;
     onSuccess: (data: z.infer<typeof contactSchema>) => void;
 }
 
 export default function ContactForm({
     onSuccess,
-    isLoading,
 }: ContactFormProps) {
 
     const form = useForm<z.infer<typeof contactSchema>>({
