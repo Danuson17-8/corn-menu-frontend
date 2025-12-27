@@ -22,7 +22,7 @@ export default function ButtonUser () {
             });
         }
     }
-    console.log("username", user?.name)
+
     return <>
         <div className="relative group">
             <button

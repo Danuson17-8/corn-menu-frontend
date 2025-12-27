@@ -8,8 +8,7 @@ export default function AnimatedButton({ to, children }: { to: string; children:
 
   return (
     <motion.button
-      className="px-3 pt-0.5 pb-1 rounded-full font-medium text-sm
-                 text-yellow-50 bg-primary select-none"
+      className="px-3 pt-0.5 pb-1 rounded-full font-medium text-sm text-yellow-50 bg-primary select-none"
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       animate={clicked ? { scale: 3, opacity: 0 } : { scale: 1, opacity: 1 }}

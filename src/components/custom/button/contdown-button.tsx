@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function CountdownButton({onClick}: {onClick: () => void}) {
+export const CountdownButton = ({onClick}: {onClick: () => void}) => {
     const [countdown, setCountdown] = useState(0);
     const [isDisabled, setIsDisabled] = useState(false);
 

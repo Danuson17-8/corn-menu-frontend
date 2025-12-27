@@ -17,22 +17,24 @@ export default function PromotionCarousel({ items }: { items: Promotion[] }) {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap())
     })
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 4000)
+
+    return () => clearInterval(interval)
   }, [api])
 
   return (
     <div className="mx-auto">
-      <Carousel setApi={setApi} opts={{loop: true}} className="w-300">
+      <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
-          {items.map((item, index) => (
-            <CarouselItem key={item.id} className="basis-1/3">
-              <div className={`p-1 transition-transform duration-300 ${current === index ? "scale-100" : "scale-70 brightness-40"}`}>
-                <PromotionItemCard item={item} />
-              </div>
+          {items.map((item) => (
+            <CarouselItem key={item.id}>
+              <PromotionItemCard item={item} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious/>
-        <CarouselNext/>
       </Carousel>
       <div className="flex justify-center gap-2 py-2 mt-3">
         {Array.from({ length: count }).map((_, index) => (

@@ -318,26 +318,6 @@ input:-webkit-autofill:active {
     background-color: rgb(252, 252, 252)
 }
 
-.nav-link {
-  @apply
-    px-3 pt-0.5 pb-1 rounded-full
-    font-medium text-sm
-    transition-all duration-500 ease-in-out
-    transform
-    text-yellow-50
-    hover:text-black
-    hover:bg-primary
-    hover:scale-110
-    select-none;
-}
-
-.nav-link[data-active="true"] {
-  @apply
-    scale-110
-    text-black
-    bg-primary;
-}
-
 .carousel-arrow {
   @apply
     cursor-pointer

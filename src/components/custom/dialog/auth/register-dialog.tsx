@@ -1,8 +1,6 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useMutation } from "@tanstack/react-query";
-import { useState } from "react";
 import type { DialogProps } from "./login-dialog";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import RegisterForm from "@/components/form/auth/register-form";
 import { requestAPI, type APIError, type IAPIResponse } from "@/lib/api";
 import type z from "zod";

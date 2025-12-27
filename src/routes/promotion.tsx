@@ -31,9 +31,9 @@ function RouteComponent() {
         className="absolute inset-0 bg-cover bg-center blur-sm"
         style={{ backgroundImage: "url('/images/bg/bg-corn2.jpg')" }}
       />
-      <PromotionCategoryCard className="absolute"/>
-      <div className="absolute left-1/2 -translate-x-1/2 top-35">
-          <PromotionCarousel items={data.data} />
+      <PromotionCategoryCard />
+      <div className="absolute z-10 inset-0 top-40 lg:top-15 md:px-10 px-5 lg:px-50 mx-auto">
+        <PromotionCarousel items={data.data} />
       </div>
   </div>
 }
