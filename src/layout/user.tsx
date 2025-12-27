@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { NavBar } from '@/components/custom/bar/navbar';
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation } from '@tanstack/react-router';
@@ -6,6 +6,11 @@ import { Footer } from '@/components/custom/footer/footer';
 
 export default function UserLayout({ children }: { children: ReactNode }) {
     const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+    
     return (
         <>
             <NavBar/>

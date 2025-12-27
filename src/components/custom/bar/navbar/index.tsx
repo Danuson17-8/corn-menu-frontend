@@ -98,7 +98,7 @@ export const NavBar = () => {
                 </div>
                 <ButtonUser/>
             </div>
-            <div className={`md:hidden grid grid-cols-2 transition-all duration-300 overflow-hidden rounded-b-5xl bg-black ${open ? "h-27 opacity-100 px-10 mt-5" : "max-h-0 opacity-0"}`}>
+            <div className={`md:hidden grid grid-cols-2 gap-3 transition-all duration-300 overflow-hidden rounded-b-5xl bg-black ${open ? "h-27 opacity-100 px-5 mt-5" : "max-h-0 opacity-0"}`}>
                 {Menu.map((item) => (
                     <NavLink  key={item.id} to={item.link} onClick={() => setOpen(false)}>{item.name}</NavLink>
                 ))}

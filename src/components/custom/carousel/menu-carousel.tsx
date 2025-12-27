@@ -28,7 +28,7 @@ export default function MenuCarousel({ items }: { items: CornMenu[] }) {
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items?.map((item, index) => (
-            <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/4">
+            <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/5">
               <Fadeup className="px-5 pb-10" delay={index * 0.2}>
                 <MenuItemCard item={item} />
               </Fadeup>
