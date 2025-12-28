@@ -245,37 +245,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     const getUser: IAuth['getUser'] = async () => {
-        try {
-            const resp = await requestAPI<IAccount>({
+        const resp = await requestAPI<IAccount>({
             method: 'GET',
             url: '/identity/profile',
-            });
+        });
 
-            if (resp.success && resp.data) {
-            setUser(resp.data);
-            return resp.data;
-            }
-
-            return null;
-        } catch (error: any) {
-            if (error?.status === 404) {
+        //have account but not have profile
+        if (resp.message == "") {
             const fallbackUser: IAccount = {
                 account: '',
                 role: 'user',
                 name: 'Account',
                 contact: {
-                email: '',
-                mobile_phone: '',
+                    email: '',
+                    mobile_phone: '',
                 },
                 address: '',
             };
-
             setUser(fallbackUser);
             return fallbackUser;
-            }
-
-            throw error;
         }
+        if (resp.success) setUser(resp.data);
+
+        return resp.data;
     };
 
     const signOut: IAuth['signOut'] = async () => {
