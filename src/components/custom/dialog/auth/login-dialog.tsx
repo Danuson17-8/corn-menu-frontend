@@ -5,15 +5,14 @@ import { useAuth } from "@/context/auth";
 import { useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
-import RegisterDialog from "./register-dialog";
 
 export interface DialogProps {
     open: boolean;
     setOpen: (open: boolean) => void
+    opendialog: () => void;
 }
 
-export function DialogLogin ({ open, setOpen }: DialogProps) {
-    const [openRegis, setOpenRegis] = useState(false);
+export function DialogLogin ({ open, setOpen, opendialog }: DialogProps) {
     const auth = useAuth();
     const navigate = useNavigate();
     const [isLoading, setLoading] = useState(false);
@@ -70,13 +69,12 @@ export function DialogLogin ({ open, setOpen }: DialogProps) {
                     className="cursor-pointer text-yellow-800"
                     onClick={() => {
                         setOpen(false)
-                        setOpenRegis(true)
+                        opendialog()
                     }}
                 >
                     Register Now
                 </button>
             </DialogContent>
         </Dialog>
-        <RegisterDialog open={openRegis} setOpen={setOpenRegis}/>
     </>
 }

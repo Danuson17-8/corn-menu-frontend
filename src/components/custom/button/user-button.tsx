@@ -5,9 +5,11 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useNavigate } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { DialogLogin } from "../dialog/auth/login-dialog";
+import RegisterDialog from "../dialog/auth/register-dialog";
 
 export default function ButtonUser () {
-    const [open, setopen] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
+    const [openRegister, setOpenRegister] = useState(false);
     const { user, signOut } = useAuth();
     const queryClient = useQueryClient();
     const navigate = useNavigate();
@@ -16,7 +18,6 @@ export default function ButtonUser () {
         if (userOld) {
             // Clear cache
             queryClient.clear();
-
             return navigate({
                 to: '/',
             });
@@ -27,7 +28,7 @@ export default function ButtonUser () {
         <div className="relative group">
             <button
                 className="text-white cursor-pointer gap-2 min-w-[120px] flex justify-end items-end"
-                onClick={() => {!user && setopen(true)}}
+                onClick={() => {!user && setOpenLogin(true)}}
             >
                 {user && user.name}
                 <User size={20} strokeWidth={3} />
@@ -47,6 +48,21 @@ export default function ButtonUser () {
                 </div>
             }
         </div>
-        <DialogLogin open={open} setOpen={setopen}/>
+        <DialogLogin
+            open={openLogin}
+            setOpen={setOpenLogin}
+            opendialog={() => {
+            setOpenLogin(false);
+            setOpenRegister(true);
+            }}
+        />
+        <RegisterDialog
+            open={openRegister}
+            setOpen={setOpenRegister}
+            opendialog={() => {
+            setOpenRegister(false);
+            setOpenLogin(true);
+            }}
+        />
     </>
 }

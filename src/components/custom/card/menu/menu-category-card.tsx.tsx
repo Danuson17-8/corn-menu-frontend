@@ -19,12 +19,12 @@ export default function MenuCategoryCard () {
             >
                 <ScrollImage src="/images/new-corn.png"/>
                     <motion.div
-                    className="absolute inset-0 flex flex-col justify-center items-center font-bold"
-                    initial={{ y: 30, opacity: 0, }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
+                        className="absolute inset-0 flex flex-col justify-center items-center font-bold"
+                        initial={{ y: 30, opacity: 0, }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
                     >
-                    <div className="flex justify-between gap-13 lg:gap-130 ml-7 md:ml-0">
+                    <div className="flex justify-between gap-10 lg:gap-130 ml-5 md:ml-0">
                         <ScrollScale className="text-5xl lg:text-[100px] mb-50 md:mb-0">                       
                             <span className="text-black">ME</span><span className="text-white">NU</span>
                             <p className="text-[50px]">SHOP</p>
