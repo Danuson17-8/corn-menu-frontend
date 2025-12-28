@@ -26,7 +26,8 @@ export function useCaptcha() {
 
 export default function CaptchaProvider({ children }: { children: ReactNode }) {
     const [widget, setWidget] = useState({
-        site_key: import.meta.env.PROD ? import.meta.env.VITE_CF_SITE_KEY : "1x00000000000000000000AA",
+        //site_key: import.meta.env.PROD ? import.meta.env.VITE_CF_SITE_KEY : "1x00000000000000000000AA",
+        site_key: "1x00000000000000000000AA",
         is_completd: false,
         token: ""
     })
