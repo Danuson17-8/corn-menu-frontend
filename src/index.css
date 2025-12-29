@@ -177,46 +177,6 @@ body {
     body {
         @apply bg-background text-foreground;
     }
-
-    .hero-title {
-        font-size: clamp(3rem, 5vw, 5.5rem);
-        line-height: 1.05;
-        font-weight: 800;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(2rem, 3vw, 4.5rem);
-        line-height: 1.15;
-        font-weight: 400;
-    }
-
-    .hero-description {
-        font-size: clamp(1rem, 1.5vw, 2.25rem);
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-
-    .hero-wrapper {
-        min-height: 100vh;
-        background-size: cover;
-        background-position: center;
-        user-select: none;
-    }
-
-    .hero-container {
-        max-width: 1280px;
-        margin-inline: auto;
-        padding: 2.5rem 1.25rem;
-        display: flex;
-        justify-content: center;
-        gap: 6rem;
-    }
-
-    .hero-content {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-    }
 }
 
 @layer components {

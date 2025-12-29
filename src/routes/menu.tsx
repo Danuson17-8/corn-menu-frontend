@@ -2,7 +2,7 @@ import MenuCategoryCard from "@/components/custom/card/menu/menu-category-card.t
 import MenuCarousel from "@/components/custom/carousel/menu-carousel"
 import { Fadeup } from "@/components/custom/framer-motion/fadeup"
 import InternalErrorScreen from "@/components/custom/screen/internal-error"
-import { LoadingScreen } from "@/components/custom/screen/loading-screen"
+import SkeletonMenuPage from "@/components/custom/screen/skeletons/menu-skeleton"
 import type { CornMenu } from "@/interface/corn-menu"
 import { requestAPI } from "@/lib/api"
 import { useQuery } from "@tanstack/react-query"
@@ -26,7 +26,7 @@ function RouteComponent() {
   })
 
   if (error) return <InternalErrorScreen error={error} />
-  if (isLoading || !data?.data) return <LoadingScreen open={true}/>
+  if (isLoading || !data?.data) return <SkeletonMenuPage/>
 
   return <>
     <MenuCategoryCard/>

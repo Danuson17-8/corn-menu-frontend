@@ -42,14 +42,14 @@ function RouteComponent() {
     >
       <path fill="#ffd700" fill-opacity="1" d="M0,192L80,165.3C160,139,320,85,480,90.7C640,96,800,160,960,165.3C1120,171,1280,117,1360,90.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
     </svg>
-    <div className="relative flex 2xl:m-30">
+    <div className="relative flex flex-col  m-3 lg:flex-row 2xl:m-30">
       <ContactCard>
         <ContactForm onSuccess={mutate}/>
       </ContactCard>
-      <div className="bg-white/30 backdrop-blur-md hidden lg:block p-10 rounded-r-2xl shadow-lg space-y-10 text-gray-800">
+      <div className="bg-white/30 backdrop-blur-md p-10 rounded-b-2xl lg:rounded-r-2xl shadow-lg space-y-10 text-gray-800">
         <div className="flex gap-3">
           <MapPin className="mt-1"/>
-          <div className="font-bold text-2xl">
+          <div className="font-bold text-fiult-sm">
               Location
               <p className="font-medium text-sm">Thailand, Chiang Mai</p>
           </div>

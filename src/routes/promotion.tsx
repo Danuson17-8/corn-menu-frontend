@@ -1,7 +1,7 @@
 import PromotionCategoryCard from "@/components/custom/card/promotion/promotion-category-card"
 import PromotionCarousel from "@/components/custom/carousel/promotion-carousel"
 import InternalErrorScreen from "@/components/custom/screen/internal-error"
-import { LoadingScreen } from "@/components/custom/screen/loading-screen"
+import SkeletonPromotionPage from "@/components/custom/screen/skeletons/promotion-skeleton"
 import type { Promotion } from "@/interface/promotion"
 import { requestAPI } from "@/lib/api"
 import { useQuery } from "@tanstack/react-query"
@@ -24,7 +24,7 @@ function RouteComponent() {
   })
 
   if (error) return <InternalErrorScreen error={error}/>
-  if (isLoading || !data?.data) return <LoadingScreen open={true}/>
+  if (isLoading || !data?.data) return <SkeletonPromotionPage/>
 
   return <div className="relative bg-gray-950 min-h-screen select-none overflow-hidden">
       <div
