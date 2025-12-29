@@ -4,7 +4,7 @@ import ScrollScale, { ScrollImage } from "../../framer-motion/scroll-scale-motio
 
 export default function MenuCategoryCard () {
     return (
-        <div className="relative bg-black h-114 w-full">
+        <div className="relative bg-black h-[62vh] w-full">
             <motion.div
                 className="bg-primary h-120 w-82 border-0 rounded-2xl overflow-hidden"
                 style={{ position: "absolute", top: 41, right: 215 }}

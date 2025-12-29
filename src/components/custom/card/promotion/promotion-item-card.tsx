@@ -9,7 +9,7 @@ interface PromotionItemCardProps {
 export default function PromotionItemCard({item}: PromotionItemCardProps) {
     return (
         <Card 
-            className="relative border-none h-120 lg:h-150 transition-transform duration-1000"
+            className="relative border-none w-[90vw] lg:w-[80vw] h-[65vh] lg:h-[80vh] transition-transform duration-1000"
             style={{
                 backgroundImage: `url(${item.image})`,
                 backgroundSize: "cover",

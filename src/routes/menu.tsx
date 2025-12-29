@@ -30,38 +30,36 @@ function RouteComponent() {
 
   return <>
     <MenuCategoryCard/>
-    <div 
-      className="px-5 lg:px-30 py-15 bg-cover"
+    <div
+      className="py-15 bg-cover"
       style={{ backgroundImage: "url('/images/bg/bg-corn3.jpg')"}}
     >
       <Fadeup className="text-center text-gray-500 text-lg">
         <p className="text-sm">Grilled Fresh to Order</p>
         <p className="text-red-500 text-5xl">𝓶𝓮𝓷𝓾</p>
-        <p className="">Top Selling Products for you</p>
+        <p>Top Selling Products for you</p>
       </Fadeup>
-      <div className="">
-        <MenuCarousel items={data.data}/>
-      </div>
+      <MenuCarousel items={data.data}/>
       <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-40 mt-20 mb-10">
         <Fadeup>
-          <img src="images/promotion/promo1.jpg" alt="image" className="h-70" />
+          <img src="images/promotion/promo1.jpg" alt="image" className="h-[37vh]" />
         </Fadeup>
-        <div className="text-xl space-y-5">
-          <Fadeup className="text-4xl font-bold" delay={0.3}>Why Choose CORN CORNN</Fadeup>
-          <Fadeup delay={0.4} className="flex items-center gap-2">
-            <Wheat className="bg-amber-100 p-1 rounded-full h-10 w-10" />
+        <div className="text-[clamp(1.1rem,1.4vw,4rem)] space-y-3.5">
+          <Fadeup className="text-[clamp(1.5rem,3vw,4rem)] font-bold" delay={0.3}>Why Choose CORN CORNN</Fadeup>
+          <Fadeup delay={0.4} className="feature-item">
+            <Wheat className="bg-amber-100 icon-feature" />
             Quality Ingredients
           </Fadeup>
-          <Fadeup delay={0.6} className="flex items-center gap-2">
-            <Store className="bg-green-100 p-1 rounded-full h-10 w-10" />
+          <Fadeup delay={0.6} className="feature-item">
+            <Store className="bg-green-100 icon-feature" />
             40 Branches Nationwide
           </Fadeup>
-          <Fadeup delay={0.8} className="flex items-center gap-2">
-            <Flag className="bg-pink-100 p-1 rounded-full h-10 w-10" />
+          <Fadeup delay={0.8} className="feature-item">
+            <Flag className="bg-pink-100 icon-feature" />
             Monthly Promotions
           </Fadeup>
-          <Fadeup delay={1} className="flex items-center gap-2">
-            <HandCoins className="bg-blue-100 p-1 rounded-full h-10 w-10" />
+          <Fadeup delay={1} className="feature-item">
+            <HandCoins className="bg-blue-100 icon-feature" />
             Great Value, Accessible to All
           </Fadeup>
         </div>

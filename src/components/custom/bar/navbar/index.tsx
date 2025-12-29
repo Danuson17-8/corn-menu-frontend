@@ -38,6 +38,7 @@ const NavLink = ({ to, children, onClick }: NavLinkProps) => (
         onClick={onClick}
         className="
             px-3 py-2 md:py-1 md:rounded-full my-auto text-center font-medium text-sm text-yellow-50 select-none
+            text-[clamp(0.75rem,1vw,1.1rem)]
             transition-all duration-500 ease-in-out transform
             hover:text-black hover:bg-primary md:hover:scale-110
             md:data-[active=true]:scale-110 data-[active=true]:text-black data-[active=true]:bg-primary
@@ -72,7 +73,7 @@ export const NavBar = () => {
     }, [lastScrollY]);
 
     return  <>
-        <div className="h-10 md:h-15 bg-black" />
+        <div className="h-[5vh] bg-black" />
         <nav className={`fixed top-0 z-50 w-full bg-black p-3 items-center transition-transform duration-300 ${show ? "translate-y-0" : "-translate-y-full"}`}>
             <div className="flex items-center justify-between lg:justify-around">
                 <button

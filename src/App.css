@@ -177,6 +177,89 @@ body {
     body {
         @apply bg-background text-foreground;
     }
+
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 5.5rem);
+        line-height: 1.05;
+        font-weight: 800;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(2rem, 3vw, 4.5rem);
+        line-height: 1.15;
+        font-weight: 400;
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 1.5vw, 2.25rem);
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .hero-wrapper {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        user-select: none;
+    }
+
+    .hero-container {
+        max-width: 1280px;
+        margin-inline: auto;
+        padding: 2.5rem 1.25rem;
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}
+
+@layer components {
+
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 5.5rem);
+        line-height: 1.05;
+        font-weight: 800;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(2rem, 3vw, 4.5rem);
+        line-height: 1.15;
+        font-weight: 400;
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 1.5vw, 2.25rem);
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .hero-wrapper {
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        user-select: none;
+    }
+
+    .hero-container {
+        max-width: 1280px;
+        margin-inline: auto;
+        padding: 2.5rem 1.25rem;
+        display: flex;
+        justify-content: center;
+        gap: 6rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+    }
 }
 
 @font-face {
@@ -282,16 +365,31 @@ h3.tiptap-heading+h2.tiptap-heading {
 }
 
 @layer utilities {
-  .swiper-slide {
-    transform: scale(0.8) !important;
-    transition: transform 0.3s ease !important;
-    filter: brightness(0.6);
-  }
+    .swiper-slide {
+        transform: scale(0.8) !important;
+        transition: transform 0.3s ease !important;
+        filter: brightness(0.6);
+    }
 
-  .swiper-slide-active {
-    transform: scale(1) !important;
-    filter: brightness(1);
-  }
+    .swiper-slide-active {
+        transform: scale(1) !important;
+        filter: brightness(1);
+    }
+
+    .icon-feature {
+        width: clamp(2rem, 2.5vw, 3.5rem);
+        height: clamp(2rem, 2.5vw, 3.5rem);
+        padding: 0.25rem;
+        border-radius: 9999px;
+    }
+
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: clamp(1rem, 1.2vw, 1.25rem);
+        font-weight: 500;
+    }
 }
 
 .btn-primary {

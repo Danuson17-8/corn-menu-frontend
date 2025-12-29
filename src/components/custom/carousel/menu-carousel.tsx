@@ -24,7 +24,7 @@ export default function MenuCarousel({ items }: { items: CornMenu[] }) {
   }, [api])
 
   return (
-    <div className="mx-15">
+    <div className="mx-20">
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items?.map((item, index) => (

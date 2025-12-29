@@ -26,7 +26,7 @@ export default function PromotionCarousel({ items }: { items: Promotion[] }) {
   }, [api])
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto w-[90vw] lg:w-[80vw]">
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items.map((item) => (

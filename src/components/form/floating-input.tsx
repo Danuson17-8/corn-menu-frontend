@@ -48,6 +48,14 @@ export default function FloatingInput({
               }
               field.onChange(value);
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+
+                const form = (e.target as HTMLInputElement).form;
+                form?.requestSubmit();
+              }
+            }}
             inputProps={{maxLength: maxLength}}
             InputProps={{
               endAdornment: field.value && (

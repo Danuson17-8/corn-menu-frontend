@@ -32,7 +32,7 @@ function RouteComponent() {
         style={{ backgroundImage: "url('/images/bg/bg-corn2.jpg')" }}
       />
       <PromotionCategoryCard />
-      <div className="absolute z-10 inset-0 top-40 lg:top-15 md:px-10 px-5 lg:px-50 mx-auto">
+      <div className="absolute inset-x-0 top-[20vh] lg:top-[15vh] z-10 mx-auto">
         <PromotionCarousel items={data.data} />
       </div>
   </div>
