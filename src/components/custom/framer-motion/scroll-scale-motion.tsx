@@ -8,7 +8,7 @@ interface ScrollTextProps {
 
 export default function ScrollScale({ children, className }: ScrollTextProps) {
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.1]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
   return (
     <motion.div
       className={className}
@@ -20,13 +20,18 @@ export default function ScrollScale({ children, className }: ScrollTextProps) {
   );
 }
 
-export function ScrollImage({src} : {src:string;}) {
+interface ScrollTmageProps {
+  src:string;
+  className?: string;
+}
+
+export function ScrollImage({src, className} : ScrollTmageProps) {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1, 4]);
   return (
     <motion.img
       src={src}
-      className="w-full h-full object-contain"
+      className={`${className}`}
       style={{scale}}
       transition={{ duration: 0.5 }}
     />

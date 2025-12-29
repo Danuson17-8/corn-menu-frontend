@@ -18,11 +18,11 @@ export const Footer = () => (
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 p-7 md:px-20 lg:px-60 items-start text-white space-y-5">
             <div className="flex flex-col items-start space-y-3">
-                <p className="text-2xl font-bold">CORN CORNN</p>
+                <p className="text-[clamp(1.2rem,1.5vw,3rem)] font-bold">CORN CORNN</p>
                 <p>Freshly Grilled Corn. Made <br className="md:hidden"/>to Make You Smile.</p>
             </div>
             <div className="flex flex-col items-end lg:items-center space-y-3">
-                <p className="text-xl font-bold">Contact</p>
+                <p className="text-[clamp(1.2rem,1.5vw,4rem)] font-bold">Contact</p>
                 <Link to="/contact">Contact us</Link>
             </div>
             <div className="col-span-2 lg:col-span-1 flex flex-row lg:flex-col justify-center items-center lg:items-end gap-5">

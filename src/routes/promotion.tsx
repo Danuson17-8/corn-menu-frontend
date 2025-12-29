@@ -1,4 +1,3 @@
-import PromotionCategoryCard from "@/components/custom/card/promotion/promotion-category-card"
 import PromotionCarousel from "@/components/custom/carousel/promotion-carousel"
 import InternalErrorScreen from "@/components/custom/screen/internal-error"
 import SkeletonPromotionPage from "@/components/custom/screen/skeletons/promotion-skeleton"
@@ -26,14 +25,14 @@ function RouteComponent() {
   if (error) return <InternalErrorScreen error={error}/>
   if (isLoading || !data?.data) return <SkeletonPromotionPage/>
 
-  return <div className="relative bg-gray-950 min-h-screen select-none overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center blur-sm"
-        style={{ backgroundImage: "url('/images/bg/bg-corn2.jpg')" }}
-      />
-      <PromotionCategoryCard />
-      <div className="absolute inset-x-0 top-[20vh] lg:top-[15vh] z-10 mx-auto">
-        <PromotionCarousel items={data.data} />
-      </div>
+  return <div className="relative py-20">
+    <div
+      className="absolute inset-0 bg-cover bg-center blur-sm"
+      style={{ backgroundImage: "url('/images/bg/bg-corn2.jpg')" }}
+    />
+    <div className="relative mx-auto">
+      <PromotionCarousel items={data.data} />
+    </div>
   </div>
+
 }

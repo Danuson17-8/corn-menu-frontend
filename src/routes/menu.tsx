@@ -1,12 +1,23 @@
 import MenuCategoryCard from "@/components/custom/card/menu/menu-category-card.tsx"
 import MenuCarousel from "@/components/custom/carousel/menu-carousel"
 import { Fadeup } from "@/components/custom/framer-motion/fadeup"
+import { MarqueeImage } from "@/components/custom/framer-motion/marquee/marquee-image"
 import InternalErrorScreen from "@/components/custom/screen/internal-error"
 import SkeletonMenuPage from "@/components/custom/screen/skeletons/menu-skeleton"
 import type { CornMenu } from "@/interface/corn-menu"
 import { requestAPI } from "@/lib/api"
 import { useQuery } from "@tanstack/react-query"
 import { Flag, HandCoins, Store, Wheat } from "lucide-react"
+
+const ImageComment: string[] = [
+  "images/comments/comment1.png",
+  "images/comments/comment2.png",
+  "images/comments/comment3.png",
+  "images/comments/comment4.png",
+  "images/comments/comment5.png",
+  "images/comments/comment6.png",
+];
+
 
 export const Route = createFileRoute({
   component: RouteComponent,
@@ -31,18 +42,19 @@ function RouteComponent() {
   return <>
     <MenuCategoryCard/>
     <div
-      className="py-15 bg-cover"
+      className="bg-cover py-20"
       style={{ backgroundImage: "url('/images/bg/bg-corn3.jpg')"}}
     >
-      <Fadeup className="text-center text-gray-500 text-lg">
+      <MenuCarousel items={data.data}/>
+      <Fadeup className="text-center text-gray-500 text-lg mt-5">
         <p className="text-sm">Grilled Fresh to Order</p>
         <p className="text-red-500 text-5xl">𝓶𝓮𝓷𝓾</p>
         <p>Top Selling Products for you</p>
       </Fadeup>
-      <MenuCarousel items={data.data}/>
-      <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-40 mt-20 mb-10">
+      <MenuCarousel scroll='Prev' items={data.data}/>
+      <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 my-40 lg:gap-40">
         <Fadeup>
-          <img src="images/promotion/promo1.jpg" alt="image" className="h-[37vh]" />
+          <img src="images/corn-promote.jpg" alt="image" className="h-[37vh]" />
         </Fadeup>
         <div className="text-[clamp(1.1rem,1.4vw,4rem)] space-y-3.5">
           <Fadeup className="text-[clamp(1.5rem,3vw,4rem)] font-bold" delay={0.3}>Why Choose CORN CORNN</Fadeup>
@@ -64,6 +76,7 @@ function RouteComponent() {
           </Fadeup>
         </div>
       </div>
+      <MarqueeImage images={ImageComment}/>
     </div>
   </>
 }

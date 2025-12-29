@@ -4,7 +4,12 @@ import type { CornMenu } from "@/interface/corn-menu"
 import { Fadeup } from "../framer-motion/fadeup"
 import { useEffect, useState } from "react"
 
-export default function MenuCarousel({ items }: { items: CornMenu[] }) {
+interface MenuCarouselProps {
+  items: CornMenu[];
+  scroll?: 'Prev' | 'Next';
+}
+
+export default function MenuCarousel({ items, scroll= 'Next' }: MenuCarouselProps) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
 
@@ -17,19 +22,20 @@ export default function MenuCarousel({ items }: { items: CornMenu[] }) {
     })
 
     const interval = setInterval(() => {
-      api.scrollNext();
+      if(scroll == 'Prev') api.scrollPrev();
+      if(scroll == 'Next') api.scrollNext();
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [api])
+  }, [api, scroll])
 
   return (
-    <div className="mx-20">
+    <div className="mx-15">
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items?.map((item, index) => (
-            <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/5">
-              <Fadeup className="px-5 pb-10" delay={index * 0.2}>
+            <CarouselItem key={item.id} className="md:basis-1/3 lg:basis-1/5">
+              <Fadeup className="px-6 pb-7" delay={index * 0.2}>
                 <MenuItemCard item={item} />
               </Fadeup>
             </CarouselItem>

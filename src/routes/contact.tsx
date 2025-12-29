@@ -49,7 +49,7 @@ function RouteComponent() {
       <div className="bg-white/30 backdrop-blur-md p-10 rounded-b-2xl lg:rounded-r-2xl shadow-lg space-y-10 text-gray-800">
         <div className="flex gap-3">
           <MapPin className="mt-1"/>
-          <div className="font-bold text-fiult-sm">
+          <div className="font-bold text-2xl">
               Location
               <p className="font-medium text-sm">Thailand, Chiang Mai</p>
           </div>
