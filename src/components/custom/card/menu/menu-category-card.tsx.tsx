@@ -24,12 +24,12 @@ export default function MenuCategoryCard () {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
                 >
-                    <div className="flex justify-around mt-20 gap-5 lg:gap-120">
+                    <div className="flex justify-around mt-20 lg:mt-0 gap-5 lg:gap-120">
                         <ScrollScale className="text-5xl lg:text-[130px]">                     
                             <span className="text-black">ME</span><span className="text-white">NU</span>
                             <p className="text-[50px]">SHOP</p>
                         </ScrollScale>
-                        <ScrollScale className="text-white text-5xl md:text-[100px] mt-60 lg:mt-20">
+                        <ScrollScale className="text-white text-5xl md:text-[100px] mt-60 md:mt-50 lg:mt-20">
                             <p className="text-amber-400 text-[50px] text-end">CORN</p>
                             C<span className="text-black">O</span><span className="text-amber-400">R</span><span className="text-black">N</span>N<span className="text-red-500">!</span>
                             <MarqueeText 
