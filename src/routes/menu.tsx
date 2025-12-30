@@ -39,10 +39,10 @@ function RouteComponent() {
   if (error) return <InternalErrorScreen error={error} />
   if (isLoading || !data?.data) return <SkeletonMenuPage/>
 
-  return <>
+  return <div className="mx-auto max-w-[1920px]">
     <MenuCategoryCard/>
     <div
-      className="bg-cover py-20"
+      className="bg-cover pb-20 pt-[60vh]"
       style={{ backgroundImage: "url('/images/bg/bg-corn3.jpg')"}}
     >
       <MenuCarousel items={data.data}/>
@@ -52,9 +52,9 @@ function RouteComponent() {
         <p>Top Selling Products for you</p>
       </Fadeup>
       <MenuCarousel scroll='Prev' items={data.data}/>
-      <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 my-40 lg:gap-40">
+      <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 my-55 lg:gap-40">
         <Fadeup>
-          <img src="images/corn-promote.jpg" alt="image" className="h-[37vh]" />
+          <img src="images/corn-promote.jpg" alt="image" className="h-55 lg:h-85" />
         </Fadeup>
         <div className="text-[clamp(1.1rem,1.4vw,4rem)] space-y-3.5">
           <Fadeup className="text-[clamp(1.5rem,3vw,4rem)] font-bold" delay={0.3}>Why Choose CORN CORNN</Fadeup>
@@ -78,5 +78,5 @@ function RouteComponent() {
       </div>
       <MarqueeImage images={ImageComment}/>
     </div>
-  </>
+  </div>
 }

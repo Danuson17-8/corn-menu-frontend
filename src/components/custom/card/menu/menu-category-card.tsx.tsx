@@ -4,12 +4,12 @@ import ScrollScale, { ScrollImage } from "../../framer-motion/scroll-scale-motio
 
 export default function MenuCategoryCard () {
     return (
-        <div className="relative h-[50vh] w-full">
+        <div className="relative">
             <motion.div
                 className="bg-primary h-120 w-82 border-0 rounded-2xl overflow-hidden shadow-2xl"
                 style={{ position: "absolute", top: 41, right: 215 }}
                 animate={{
-                    width: "100vw",
+                    width: "100%",
                     height: "90vh",
                     top: 0,
                     right: 0,
@@ -19,13 +19,13 @@ export default function MenuCategoryCard () {
             >
                 <ScrollImage className="h-[60vh] lg:h-[70vh] mx-auto mt-5" src="/images/new-corn.png"/>
                 <motion.div
-                    className="absolute inset-0 pt-15 lg:pt-40 font-bold"
+                    className="absolute inset-0 lg:pt-40 font-bold"
                     initial={{ y: 30, opacity: 0, }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
                 >
-                <div className="flex justify-around ml-3 gap-5 lg:gap-120">
-                    <ScrollScale className="text-5xl lg:text-[100px]">                     
+                <div className="flex justify-around ml-2 gap-5 lg:gap-120">
+                    <ScrollScale className="text-5xl lg:text-[130px]">                     
                         <span className="text-black">ME</span><span className="text-white">NU</span>
                         <p className="text-[50px]">SHOP</p>
                     </ScrollScale>

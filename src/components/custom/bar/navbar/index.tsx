@@ -74,7 +74,7 @@ export const NavBar = () => {
 
     return  <>
         <div className="h-[5vh] bg-black" />
-        <nav className={`fixed top-0 z-50 w-full bg-black p-3 items-center transition-transform duration-300 ${show ? "translate-y-0" : "-translate-y-full"}`}>
+        <nav className={`fixed top-0 z-50 w-full bg-black px-5 py-3 items-center transition-transform duration-300 ${show ? "translate-y-0" : "-translate-y-full"}`}>
             <div className="flex items-center justify-between lg:justify-around">
                 <button
                     onClick={() => setOpen(!open)}
