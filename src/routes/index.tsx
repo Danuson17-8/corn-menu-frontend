@@ -12,9 +12,9 @@ function RouteComponent() {
 
   return (
     <>
-      <div className="bg-gray-950 text-white relative h-screen lg:h-[190vh]">
-        <div className="hero-container absolute left-[10%] z-10 flex min-h-screen items-center px-12">
-          <div className="hero-content max-w-xl">
+      <div className="bg-gray-950 text-white relative h-screen lg:h-[150vh]">
+        <div className="hero-container absolute left-[5%] top-[5%] lg:left-[10%] z-10 flex min-h-screen">
+          <div className="hero-content">
             <p className="hero-title">Corn CORNN!</p>
             <p className="hero-subtitle">
               Freshly Grilled Corn.<br />
@@ -40,6 +40,7 @@ function RouteComponent() {
             </div>
           </div>
         </div>
+        <img src="images/bg/bg-corn5.png" className="md:hidden absolute top-[50%] max-h-250" />
         <ProductCard/>
       </div>
       <div className="bg-gray-950 min-h-screen text-white py-20 px-5 lg:px-50 space-y-25">
