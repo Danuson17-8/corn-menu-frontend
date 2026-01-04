@@ -54,7 +54,7 @@ function RouteComponent() {
       <MenuCarousel scroll='Prev' items={data.data}/>
       <div  className="flex flex-col lg:flex-row justify-center items-center gap-10 my-55 lg:gap-40">
         <Fadeup>
-          <img src="images/corn-promote.jpg" alt="image" className="h-55 lg:h-85" />
+          <img src="images/corn-promote.jpg" alt="image" className="max-h-85" />
         </Fadeup>
         <div className="text-[clamp(1.1rem,1.4vw,4rem)] space-y-3.5">
           <Fadeup className="text-[clamp(1.5rem,3vw,4rem)] font-bold" delay={0.3}>Why Choose CORN CORNN</Fadeup>

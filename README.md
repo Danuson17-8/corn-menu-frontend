@@ -54,12 +54,21 @@ npm run dev
 # Preview
 
 ### Home Page
-![Home Page](public/images/screenshots/home.png)
+<p align="center">
+  <img src="public/images/screenshots/home1.png" width="45%" />
+  <img src="public/images/screenshots/home2.png" width="45%" />
+</p>
 
 ### Menu Page
 <p align="center">
   <img src="public/images/screenshots/menu1.png" width="45%" />
   <img src="public/images/screenshots/menu2.png" width="45%" />
+</p>
+
+### Promotion Page
+<p align="center">
+  <img src="public/images/screenshots/promo1.png" width="45%" />
+  <img src="public/images/screenshots/promo2.png" width="45%" />
 </p>
 
 ### Contact

@@ -376,35 +376,6 @@ input:-webkit-autofill:active {
     background-color: rgb(252, 252, 252)
 }
 
-.carousel-arrow {
-  @apply
-    cursor-pointer
-    absolute
-    px-3
-    h-15 w-20
-    bg-gray-800 text-gray-400
-    shadow-lg
-    transition-all duration-300
-    hover:scale-110
-    hover:bg-white hover:text-black
-    disabled:opacity-40
-    disabled:pointer-events-none;
-}
-
-.carousel-arrow-prev {
-  @apply
-    rounded-br-[200px]
-    rounded-tr-[30px]
-    rounded-l-[100px];
-}
-
-.carousel-arrow-next {
-  @apply
-    rounded-tl-[200px]
-    rounded-bl-[30px]
-    rounded-r-[100px];
-}
-
 .mask-image-linear {
   mask-image: linear-gradient(
     to right,
@@ -413,6 +384,17 @@ input:-webkit-autofill:active {
     rgba(0, 0, 0, 1) 99%,
     rgba(0, 0, 0, 0)
   );
+}
+
+.grain {
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.nav-btn {
+  @apply flex h-12 w-12 items-center justify-center rounded-full
+         border border-white/30 text-lg
+         transition hover:bg-white hover:text-black;
 }
 
 
