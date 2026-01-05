@@ -1,11 +1,22 @@
 import { useNavigate } from "@tanstack/react-router"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useSpring, useTransform } from "framer-motion"
 
 export const ProductCard = () => {
   const navigate = useNavigate()
   const { scrollYProgress } = useScroll()
-  const width = useTransform(scrollYProgress, [0, 0.4], ["30px", "100vw"])
-  const height = useTransform(scrollYProgress, [0, 0.4], ["70px", "80vh"])
+  const smooth = {
+    stiffness: 120,
+    damping: 25,
+    mass: 0.8,
+  }
+  const width = useSpring(
+    useTransform(scrollYProgress, [0.1, 0.4], ["30px", "100vw"]),
+    smooth
+  )
+  const height = useSpring(
+    useTransform(scrollYProgress, [0, 0.4], ["70px", "80vh"]),
+    smooth
+  )
   const radius = useTransform(scrollYProgress, [0, 0.4], ["24px", "0px"])
   const top = useTransform(scrollYProgress, [0, 0.4], ["5%", "28%"])
   const right = useTransform(scrollYProgress, [0, 0.4], ["12%", "0%"])
