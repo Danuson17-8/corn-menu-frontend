@@ -1,5 +1,7 @@
+import { MarketingCard } from "@/components/custom/card/card-mareting";
 import { ProductCard } from "@/components/custom/card/card-product";
 import { Fadeup } from "@/components/custom/framer-motion/fadeup";
+import BackgroundParallax from "@/components/custom/framer-motion/hover-Interaction";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "@tanstack/react-router";
 
@@ -11,8 +13,8 @@ function RouteComponent() {
   const navigate = useNavigate()
 
   return (
-    <>
-      <div className="bg-gray-950 text-white relative h-screen lg:h-[150vh]">
+    <BackgroundParallax src="images/bg/bg-corn9.jpeg">
+      <div className=" text-white relative h-screen lg:h-[150vh]">
         <div className="hero-container absolute left-[5%] top-[5%] lg:left-[10%] z-10 flex min-h-screen">
           <div className="hero-content">
             <p className="hero-title">Corn CORNN!</p>
@@ -40,10 +42,9 @@ function RouteComponent() {
             </div>
           </div>
         </div>
-        <img src="images/bg/bg-corn5.png" className="md:hidden absolute top-[50%] max-h-250" />
         <ProductCard/>
       </div>
-      <div className="bg-gray-950 min-h-screen text-white py-20 px-5 lg:px-50 space-y-25">
+      <div className="relative min-h-screen bg-black/90 text-white py-20 px-5 lg:px-50 space-y-25">
         <Fadeup className="flex justify-between items-center font-serif hero-description">
           <div>
             <p className="hero-subtitle">Grilled Corn</p>
@@ -54,21 +55,23 @@ function RouteComponent() {
           </div>
           <p className="text-white/50">Perfectly Grilled Corn</p>
         </Fadeup>
-        <Fadeup className="flex flex-col lg:flex-row justify-center items-center text-center lg:text-end gap-10">
-          <span className="leading-8">
-            Freshly grilled sweet corn made from carefully selected ingredients.<br/>
-            Slowly grilled over open flame for a rich, smoky aroma.<br/>
-            Coated with our signature sauce for perfectly balanced flavor.<br/>
-            Available in classic and spicy options to suit every taste.<br/>
-            A customer favorite, often shared across social media.<br/>
+        <MarketingCard image="images/product.jpeg" className="max-h-200 max-w-250 mx-auto">
+          <p className="font-serif hero-description italic">
+            Grilled to Perfection
+          </p>
+          <span className="text-black/50">
+              Freshly grilled sweet corn made from carefully selected ingredients.<br/>
+              Slowly grilled over open flame for a rich, smoky aroma.<br/>
+              Coated with our signature sauce for perfectly balanced flavor.<br/>
+              Available in classic and spicy options to suit every taste.<br/>
+              A customer favorite, often shared across social media.<br/>
           </span>
-          <img src="images/product.jpeg" alt="Product" className="max-h-50" />
-        </Fadeup>
+        </MarketingCard>
         <Fadeup className="text-center font-serif hero-description text-primary">
           Smoky, Sweet & Delicious
           <p className="text-lg text-white/50">Corn You Feel It?</p>
         </Fadeup>
       </div>
-    </>
+    </BackgroundParallax>
   )
 }
