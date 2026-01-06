@@ -14,28 +14,28 @@ export const Fadeup = ({ children, className, delay = 0 }: FadeupProps) => {
 
     useEffect(() => {
         if (inView) {
-        controls.start({
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, delay },
-        });
+            controls.start({
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, delay },
+            });
         } else {
-        controls.start({
-            opacity: 0,
-            y: 40,
-            transition: { duration: 0.8 },
-        });
+            controls.start({
+                opacity: 0,
+                y: 40,
+                transition: { duration: 0.8 },
+            });
         }
     }, [inView, controls, delay]);
 
     return (
         <motion.div
-        ref={ref}
-        className={className}
-        initial={{ opacity: 0, y: 40 }}
-        animate={controls}
+            ref={ref}
+            className={className}
+            initial={{ opacity: 0, y: 40 }}
+            animate={controls}
         >
-        {children}
+            {children}
         </motion.div>
     );
 };

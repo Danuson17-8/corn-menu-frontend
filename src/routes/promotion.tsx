@@ -26,5 +26,4 @@ function RouteComponent() {
   if (isLoading || !data?.data) return <SkeletonPromotionPage/>
 
   return <PromotionSlider items={data.data}/>
-
 }

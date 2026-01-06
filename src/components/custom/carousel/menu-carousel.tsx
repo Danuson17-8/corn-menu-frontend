@@ -30,7 +30,7 @@ export default function MenuCarousel({ items, scroll= 'Next' }: MenuCarouselProp
   }, [api, scroll])
 
   return (
-    <div className="mx-15">
+    <div className="mx-15 mask-image-linear">
       <Carousel setApi={setApi} opts={{loop: true}}>
         <CarouselContent>
           {items?.map((item, index) => (

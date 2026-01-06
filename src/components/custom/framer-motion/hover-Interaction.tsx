@@ -1,17 +1,18 @@
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, MotionValue, useTransform } from "framer-motion"
 import { type ReactNode } from "react"
 
-interface BackgroundParallaxProps {
-    children: ReactNode;
-    src: string;
+export interface BackgroundParallaxProps {
+  progress: MotionValue<number>;
+  children: ReactNode;
+  src: string;
+  className?: string;
 }
 
-export default function BackgroundParallax({children, src}: BackgroundParallaxProps) {
-  const { scrollYProgress } = useScroll()
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+export default function BackgroundParallax({className, progress, children, src}: BackgroundParallaxProps) {
+  const bgY = useTransform(progress, [0, 1], ["0%", "35%"])
 
   return (
-    <div className="relative bg-black overflow-hidden">
+    <div className={`relative bg-black overflow-hidden ${className}`}>
         <motion.div
             className="absolute inset-0 bg-cover bg-center"
             style={{
@@ -19,8 +20,9 @@ export default function BackgroundParallax({children, src}: BackgroundParallaxPr
             y: bgY
             }}
         />
-        <div className="absolute inset-0 bg-black/20" />
-        {children}
+        <div className="relative">
+          {children}
+        </div>
     </div>
   )
 }

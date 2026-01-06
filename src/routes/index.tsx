@@ -4,16 +4,18 @@ import { Fadeup } from "@/components/custom/framer-motion/fadeup";
 import BackgroundParallax from "@/components/custom/framer-motion/hover-Interaction";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "@tanstack/react-router";
+import { useScroll } from "framer-motion";
 
 export const Route = createFileRoute({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { scrollYProgress } = useScroll();
 
   return (
-    <BackgroundParallax src="images/bg/bg-corn9.jpeg">
+    <BackgroundParallax progress={scrollYProgress} src="images/bg/bg-corn9.jpeg">
       <div className=" text-white relative h-screen lg:h-[150vh]">
         <div className="hero-container absolute left-[5%] top-[5%] lg:left-[10%] z-10 flex min-h-screen">
           <div className="hero-content">

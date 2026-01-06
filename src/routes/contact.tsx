@@ -1,8 +1,10 @@
 import ContactCard from "@/components/custom/card/contact/contactus-card"
+import BackgroundParallax from "@/components/custom/framer-motion/hover-Interaction"
 import ContactForm from "@/components/form/contact-form"
 import { APIError, requestAPI, type IAPIResponse } from "@/lib/api"
 import type { contactSchema } from "@/schema/contact.schema"
 import { useMutation } from "@tanstack/react-query"
+import { useScroll } from "framer-motion"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { toast } from "sonner"
 import type z from "zod"
@@ -12,6 +14,7 @@ export const Route = createFileRoute({
 })
 
 function RouteComponent() {
+  const { scrollYProgress } = useScroll();
   const {
       mutate,
   } = useMutation<
@@ -30,23 +33,23 @@ function RouteComponent() {
       onError: (err) => toast.error(err.message),
   })
 
-  return <div className="relative min-h-screen py-10 px-3 md:px-10 lg:px-30">
-    <div
-      className="absolute inset-0 bg-cover bg-center z-0"
-      style={{ backgroundImage: "url('/images/bg/bg-corn1.jpg')" }}
-    />
-    <svg 
-      className="absolute right-0 bottom-0 h-[50vh] w-[100vvw]"
+  return <BackgroundParallax progress={scrollYProgress} src="images/bg/bg-corn12.jpg">
+    <svg
+      className="absolute bottom-0 h-[50vh]"
       xmlns="http://www.w3.org/2000/svg" 
       viewBox="0 0 1440 320"
     >
-      <path fill="#ffd700" fill-opacity="1" d="M0,192L80,165.3C160,139,320,85,480,90.7C640,96,800,160,960,165.3C1120,171,1280,117,1360,90.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+      <path 
+        fill="#ffd700" 
+        fill-opacity="1" 
+        d="M0,192L80,165.3C160,139,320,85,480,90.7C640,96,800,160,960,165.3C1120,171,1280,117,1360,90.7L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z">
+      </path>
     </svg>
-    <div className="relative flex flex-col  m-3 lg:flex-row 2xl:m-30">
+    <div className="relative flex flex-col lg:flex-row 2xl:m-30 md:mx-40 py-10 px-3">
       <ContactCard>
         <ContactForm onSuccess={mutate}/>
       </ContactCard>
-      <div className="bg-white/30 backdrop-blur-md p-10 rounded-b-2xl lg:rounded-r-2xl shadow-lg space-y-10 text-gray-800">
+      <div className="bg-white/30 backdrop-blur-md p-10 rounded-b-2xl lg:rounded-r-2xl lg:rounded-bl-none shadow-lg space-y-10 text-gray-800">
         <div className="flex gap-3">
           <MapPin className="mt-1"/>
           <div className="font-bold text-2xl">
@@ -70,5 +73,5 @@ function RouteComponent() {
         </div>
       </div>
     </div>
-  </div>
+  </BackgroundParallax>
 }

@@ -341,6 +341,7 @@ h3.tiptap-heading+h2.tiptap-heading {
         height: clamp(2rem, 2.5vw, 3.5rem);
         padding: 0.25rem;
         border-radius: 9999px;
+        color: #000;
     }
 
     .feature-item {

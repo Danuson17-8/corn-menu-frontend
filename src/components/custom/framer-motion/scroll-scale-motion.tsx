@@ -1,19 +1,18 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionValue, useTransform } from "framer-motion";
 import { type ReactNode } from "react";
 
 interface ScrollTextProps {
+  progress: MotionValue<number>;
   children: ReactNode;
   className?: string;
 }
 
-export default function ScrollScale({ children, className }: ScrollTextProps) {
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0]);
+export default function ScrollScale({ progress, children, className }: ScrollTextProps) {
+  const scale = useTransform(progress, [0, 1], [1, 0]);
   return (
     <motion.div
       className={className}
       style={{scale}}
-      transition={{ duration: 0.5 }}
     >
       {children}
     </motion.div>
@@ -21,19 +20,18 @@ export default function ScrollScale({ children, className }: ScrollTextProps) {
 }
 
 interface ScrollTmageProps {
+  progress: MotionValue<number>;
   src:string;
   className?: string;
 }
 
-export function ScrollImage({src, className} : ScrollTmageProps) {
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 4]);
+export function ScrollImage({progress, src, className} : ScrollTmageProps) {
+  const scale = useTransform(progress, [0, 1], [1, 4]);
   return (
     <motion.img
       src={src}
-      className={`${className}`}
+      className={className}
       style={{scale}}
-      transition={{ duration: 0.5 }}
     />
   );
 }
