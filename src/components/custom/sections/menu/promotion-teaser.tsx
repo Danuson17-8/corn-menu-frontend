@@ -23,10 +23,10 @@ export function PromotionTeaser() {
                         </div>
                     </div>
                     <div className="hero-subtitle px-5 sticky top-[20vh] self-start text-white font-medium">
-                        <div className="text-white font-serif">
-                            <RevealText text="We craft our grilled corn" />
-                            <RevealText text="with quality ingredients" delay={0.2} />
-                            <RevealText text="for bold flavor and aroma." delay={0.3} />
+                        <div className="text-white font-serif space-y-3">
+                            <RevealText text="Crafted grilled corn" />
+                            <RevealText text="Quality ingredients" delay={0.2} />
+                            <RevealText text="Bold flavor." delay={0.3} />
                         </div>
                         <Fadeup>
                             <p className="text-xl mt-10">Enjoy monthly promotions and exclusive discounts.</p>

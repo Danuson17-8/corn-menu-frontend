@@ -27,19 +27,19 @@ export default function HeroMenuSection() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.3, ease: "easeIn", delay: 0.7 }}
                 >
-                    <ScrollScale progress={scrollYProgress} className="absolute left-10 text-5xl lg:text-[130px]">                     
+                    <ScrollScale progress={scrollYProgress} className="absolute left-10 text-[clamp(3rem,10vw,12.5rem)]">                     
                         <span className="text-black">ME</span><span className="text-white">NU</span>
                         <p className="text-[50px]">SHOP</p>
                     </ScrollScale>
-                    <ScrollScale progress={scrollYProgress} className="absolute z-20 right-10 text-white text-5xl md:text-[100px] mt-60">
+                    <ScrollScale progress={scrollYProgress} className="absolute z-20 right-10 text-white text-[clamp(3rem,8vw,12.5rem)] mt-50 lg:mt-30">
                         <p className="text-amber-400 text-[50px] text-end">CORN</p>
                         C<span className="text-black">O</span><span className="text-amber-400">R</span><span className="text-black">N</span>N<span className="text-red-500">!</span>
                         <MarqueeText 
-                            className="text-xl w-45 md:w-92 overflow-hidden relative bg-gray-900 rounded-b-xl text-gray-400" 
+                            className="text-xl w-45 md:w-112 2xl:w-142 overflow-hidden bg-gray-900 rounded-b-xl text-gray-400" 
                             text="Join us for a special corn sale! Fresh, sweet, and juicy corn awaits you."
                         />
                     </ScrollScale>
-                    <ScrollScale progress={scrollYProgress} className="absolute left-1/2 -translate-x-1/2 bottom-10 flex justify-center gap-4 mt-[25vh] text-5xl text-white">
+                    <ScrollScale progress={scrollYProgress} className="absolute left-1/2 -translate-x-1/2 bottom-15 md:bottom-10 flex justify-center gap-4 mt-[25vh] text-5xl text-white">
                         <div className="flex">
                             <p className="hidden md:block">SCROLL T</p>
                             <ScrollIndicator className="mt-2" />
