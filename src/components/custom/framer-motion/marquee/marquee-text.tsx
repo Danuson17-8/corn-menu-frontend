@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
@@ -31,7 +32,7 @@ export default function MarqueeText({
   return (
     <div
       ref={containerRef}
-      className={`overflow-hidden relative ${className}`}
+      className={cn("overflow-hidden relative", className)}
     >
       <motion.div
         ref={textRef}

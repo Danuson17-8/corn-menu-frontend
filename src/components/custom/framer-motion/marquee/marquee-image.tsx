@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 interface MarqueeImageProps {
@@ -16,7 +17,7 @@ export const MarqueeImage = ({
   className,
 }: MarqueeImageProps) => {
   return (
-    <div className={`flex overflow-hidden mask-image-linear ${className}`}>
+    <div className={cn("flex overflow-hidden mask-image-linear", className)}>
       <motion.div
         initial={{ x: from }}
         animate={{ x: to }}

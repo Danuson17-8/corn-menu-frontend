@@ -11,7 +11,7 @@ export const Route = createFileRoute({
 
 function RouteComponent() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["promoton"],
+    queryKey: ["promotion"],
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
     queryFn: () =>

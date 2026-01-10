@@ -18,7 +18,7 @@ interface SelectCustomProps {
 export function SelectCustom({label, items, value, onChange}: SelectCustomProps ) {
   return (
     <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className="w-full">
+        <SelectTrigger className="w-full text-md p-5">
             <SelectValue placeholder={label} />
         </SelectTrigger>
         <SelectContent className="max-h-60 overflow-y-auto">

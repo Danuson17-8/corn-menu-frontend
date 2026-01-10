@@ -18,14 +18,14 @@ export const ProductCard = () => {
     smooth
   )
   const radius = useTransform(scrollYProgress, [0, 0.4], ["24px", "0px"])
-  const top = useTransform(scrollYProgress, [0, 0.4], ["5%", "28%"])
+  const top = useTransform(scrollYProgress, [0, 0.4], ["5%", "50%"])
   const right = useTransform(scrollYProgress, [0, 0.4], ["12%", "0%"])
   const bgImageOpacity = useTransform(scrollYProgress, [0.2, 0.4], [0, 1])
 
   return (
     <motion.div
       style={{ width, height, top, right, borderRadius: radius }}
-      className="hidden lg:block sticky top-[20%] ml-auto mr-12 shadow-lg overflow-hidden bg-primary z-30"
+      className="hidden lg:block sticky top-[20%] ml-auto mr-12 shadow-lg overflow-hidden bg-black/80 backdrop-blur-xs hover:scale-105 transform transition-discrete duration-300 will-change-transform"
     >
         <motion.div
           className="absolute inset-0 bg-cover bg-center"
@@ -46,7 +46,7 @@ export const ProductCard = () => {
               onClick={() => navigate({ to: "/menu" })}
               className="absolute bottom-8 left-1/2 cursor-pointer -translate-x-1/2 bg-black text-white font-bold py-3 px-8 rounded-full transition hover:bg-amber-600"
             >
-            Buy Now
+              Buy Now
             </button>
         </div>
     </motion.div>

@@ -7,6 +7,14 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { SelectCustom } from "../custom/select/select-custom";
 
+const topics = [
+    "Classic Corn", "Cheese Corn", "Garlic Corn",
+    "Sweet Corn", "Coconut Corn", "Grilled Corn on Stick",
+    "Corn with Chili Powder", "Lemon Corn", "Smoky Corn", "Corn with Mayonnaise",
+    "Barbecue Corn", "Herb Corn", "Corn with Soy Sauce", "Corn with Salted Egg",
+    "Corn with Cheese Sauce", "Other"
+];
+
 export interface ContactFormProps {
     onSuccess: (data: z.infer<typeof contactSchema>) => void;
 }
@@ -24,14 +32,6 @@ export default function ContactForm({
             message: ""
         },
     });
-
-    const topics = [
-        "Classic Corn", "Cheese Corn", "Garlic Corn",
-        "Sweet Corn", "Coconut Corn", "Grilled Corn on Stick",
-        "Corn with Chili Powder", "Lemon Corn", "Smoky Corn", "Corn with Mayonnaise",
-        "Barbecue Corn", "Herb Corn", "Corn with Soy Sauce", "Corn with Salted Egg",
-        "Corn with Cheese Sauce", "Other"
-    ] as const;
 
     return (
         <Form {...form}>

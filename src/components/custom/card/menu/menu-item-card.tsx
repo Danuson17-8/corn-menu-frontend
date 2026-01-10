@@ -1,13 +1,13 @@
 import { Card } from "@/components/ui/card";
 import type { CornMenu } from "@/interface/corn-menu";
 
-export default function MenuItemCard ({item} : {item:CornMenu}) {
+export default function MenuItemCard({item} : {item:CornMenu}) {
     return (
         <div className="border-0 my-2 mt-10 2xl:mt-20 w-[55vw] lg:w-[15vw] 2xl:w-70">
             <div className="h-[7vh] overflow-visible">
                 <img
                     src={item.image}
-                    className="h-[14vh] m-auto"
+                    className="h-30 m-auto"
                     alt="img CORN!"
                 />
             </div>
