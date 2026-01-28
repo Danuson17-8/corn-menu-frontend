@@ -16,7 +16,7 @@ export function MenuSection({data}: {data: CornMenu[];}) {
                     <p className="text-red-500 text-5xl">𝓶𝓮𝓷𝓾</p>
                     <p>Top Selling Products for you</p>
                 </Fadeup>
-                <MenuCarousel scroll='Prev' items={data}/>
+                <MenuCarousel items={data}/>
             </div>
         </BackgroundParallax>
     );
