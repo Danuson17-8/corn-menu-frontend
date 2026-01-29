@@ -35,7 +35,7 @@ export default function HeroMenuSection() {
                         <p className="text-amber-400 text-[50px] text-end">CORN</p>
                         C<span className="text-black">O</span><span className="text-amber-400">R</span><span className="text-black">N</span>N<span className="text-red-500">!</span>
                         <MarqueeText 
-                            className="text-xl w-45 md:w-112 2xl:w-142 overflow-hidden bg-gray-900 rounded-b-xl text-gray-400" 
+                            className="text-xl w-45 md:w-md 2xl:w-142 overflow-hidden bg-gray-900 rounded-b-xl text-gray-400" 
                             text="Join us for a special corn sale! Fresh, sweet, and juicy corn awaits you."
                         />
                     </ScrollScale>

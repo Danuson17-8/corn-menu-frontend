@@ -26,7 +26,6 @@ export default function PromotionSlider({ items }: { items: Promotion[] }) {
 
   return (
     <section className="relative h-screen overflow-hidden bg-black text-white">
-      <div className="grain pointer-events-none fixed inset-0 z-10" />
       <header className="pointer-events-none absolute lg:fixed lg:top-15 left-0 z-20 flex w-full items-center justify-between px-8 py-6 gap-3">
         <h1 className="pointer-events-auto font-serif text-xl tracking-widest uppercase">
           Promotion

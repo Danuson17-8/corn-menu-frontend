@@ -1,5 +1,3 @@
-import InternalErrorScreen from "@/components/custom/screen/internal-error"
-import SkeletonPromotionPage from "@/components/custom/screen/skeletons/promotion-skeleton"
 import PromotionSlider from "@/components/custom/slider/slider-promotion"
 import type { Promotion } from "@/interface/promotion"
 import { requestAPI } from "@/lib/api"
@@ -63,7 +61,11 @@ export const Route = createFileRoute({
 })
 
 function RouteComponent() {
-  const { data, isLoading, error } = useQuery({
+  const { 
+    data, 
+    //isLoading, 
+    //error 
+  } = useQuery({
     queryKey: ["promotion"],
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,

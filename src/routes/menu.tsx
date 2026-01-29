@@ -1,6 +1,4 @@
 import { MarqueeImage } from "@/components/custom/framer-motion/marquee/marquee-image"
-import InternalErrorScreen from "@/components/custom/screen/internal-error"
-import SkeletonMenuPage from "@/components/custom/screen/skeletons/menu-skeleton"
 import type { CornMenu } from "@/interface/corn-menu"
 import { requestAPI } from "@/lib/api"
 import { useQuery } from "@tanstack/react-query"
@@ -102,7 +100,11 @@ export const Route = createFileRoute({
 })
 
 function RouteComponent() {
-  const { data, isLoading, error } = useQuery({
+  const { 
+    data, 
+    //isLoading, 
+    //error 
+  } = useQuery({
     queryKey: ["menu_corn"],
     refetchOnWindowFocus: false,
     refetchOnReconnect: true,
